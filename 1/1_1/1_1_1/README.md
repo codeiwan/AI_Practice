@@ -1,4 +1,4 @@
-[prev](./../README.md) | [main](./../../README.md)
+[Home](./../../../README.md) | [인공 지능 딥러닝의 이해](./../../README.md) | [인공 신경망의 이해](./../README.md) | 인공 신경망이란?
 
 ## 인공 신경망이란?
 인공 신경망(ANN's: Artificial neural networks)은 인간의 중앙 신경계로부터 영감을 얻어 만들어졌다.<br>
