@@ -6,7 +6,7 @@
 ### 분수 함수 근사해 보기
 다음은 분수 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/d7ed8542-8d7e-4314-8baf-0e7e8b648b54)  
-$y = \frac{1}{x}$ 　$(0.1 \leq x \leq 5)$
+$y = \frac{1}{x}$ 　 $(0.1 \leq x \leq 5)$
 
 x 좌표의 범위는 $0.1$에서 $5$까지이다.  
 분수함수의 경우 x 값 0에 대해 정의되지 않는다.  
@@ -21,7 +21,7 @@ ys = 1.0/xs
 ### sin 함수 근사해 보기
 다음은 sin 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/edf2219a-7807-450f-93a2-e9a704408ffc)  
-$y = sin(x)$ 　$(0 \leq x \leq 2 \pi)$
+$y = sin(x)$ 　 $(0 \leq x \leq 2 \pi)$
 
 x 좌표의 범위는 $0$에서 $2\pi$까지 이다.  
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -35,7 +35,7 @@ ys = np.sin(xs)
 ### tanh 함수 근사해 보기
 다음은 tanh 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.
 ![Image](https://github.com/user-attachments/assets/dee8437f-ba63-4f04-a13a-d9bad632c86b)
-$y = tanh(x)$ 　$(-5 \leq x \leq 5)$
+$y = tanh(x)$ 　 $(-5 \leq x \leq 5)$
 
 x 좌표의 범위는 $-5$에서 $5$까지이다.  
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -49,7 +49,7 @@ ys = np.tanh(xs)
 ### e 지수함수 근사해 보기
 다음은 e 지수 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/8824875d-e84d-4d66-913d-71acf12015b1)
-$y = e^x$ 　$(-5 \leq x \leq 5)$
+$y = e^x$ 　 $(-5 \leq x \leq 5)$
 
 x 좌표의 범위는 $-5$에서 $5$까지이다.   
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -63,7 +63,7 @@ ys = np.exp(xs)
 ### sigmoid 함수 근사해 보기
 다음은 sigmoid 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/8a5bba28-30d7-434e-9cd1-2f6a3dc20668)  
-$y = \frac{1}{1-e^{-x}}$ 　$(-5 \leq x \leq 5)$
+$y = \frac{1}{1-e^{-x}}$ 　 $(-5 \leq x \leq 5)$
 
 x 좌표의 범위는 $-5$에서 $5$까지이다.  
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -77,7 +77,7 @@ ys = 1.0/(1.0 + np.exp(-xs))
 ### 로그 함수 근사해 보기
 다음은 로그 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/abf6b26f-2251-4989-bb58-90bc0f82154f)  
-$y = log(x)$ 　$(0 \leq x \leq 5)$
+$y = log(x)$ 　 $(0 \leq x \leq 5)$
 
 x 좌표의 범위는 $0$에서 $5$까지이다.  
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -91,7 +91,7 @@ ys = np.log(xs)
 ### 제곱근 함수 근사해 보기
 다음은 제곱근 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/2afa31b1-29d6-4ad6-ad7f-7c9939546a96)  
-$y = \sqrt{x}$ 　$(0 \leq x \leq 5)$
+$y = \sqrt{x}$ 　 $(0 \leq x \leq 5)$
 
 x 좌표의 범위는 $0.1$에서 $5$까지이다.  
 제곱근 함수의 경우 음수 x 값에 대해 정의되지 않는다.  
@@ -106,7 +106,7 @@ ys = np.sqrt(xs)
 ### relu 함수 근사해 보기
 다음은 relu 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/37e08325-3c38-4582-8b7c-05c0de222e80)  
-$y = \begin{cases} x　(x > 0)\\ 0　(x \leq 0) \end{cases}$ 　$(-3 \leq x \leq 3)$
+$y = \begin{cases} x (x > 0)\\ 0　 (x \leq 0) \end{cases}$ 　 $(-3 \leq x \leq 3)$
 
 x 좌표의 범위는 $-3$에서 $3$까지이다.  
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -120,7 +120,7 @@ ys = (xs > 0)*xs
 ### leaky relu 함수 근사해 보기
 다음은 leaky relu 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/7c95b6bf-801a-46ba-98bb-e2f05d8b04ab)
-$y = \begin{cases} x　(x > 0)\\ ax　(x \leq 0) \end{cases}$ 　$(-3 \leq x \leq 3, 　a=0.1)$
+$y = \begin{cases} x　 (x > 0)\\ ax　 (x \leq 0) \end{cases}$ 　 $(-3 \leq x \leq 3, 　a=0.1)$
 
 x 좌표의 범위는 $-3$에서 $3$까지이다.  
 위 그래프에서 a는 0.1이다.  
