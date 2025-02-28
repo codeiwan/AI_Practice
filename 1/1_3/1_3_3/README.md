@@ -106,7 +106,7 @@ ys = np.sqrt(xs)
 ### relu 함수 근사해 보기
 다음은 relu 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/37e08325-3c38-4582-8b7c-05c0de222e80)  
-$y = x (x > 0), 0 (x \leq 0)$ 　 $(-3 \leq x \leq 3)$
+$y = x (x > 0)$,　 $0 (x \leq 0)$ 　 $(-3 \leq x \leq 3)$
 
 x 좌표의 범위는 $-3$에서 $3$까지이다.  
 이전 예제를 다음과 같이 수정한 후, 테스트를 수행한다.
@@ -120,7 +120,7 @@ ys = (xs > 0)*xs
 ### leaky relu 함수 근사해 보기
 다음은 leaky relu 함수에 대한 그래프와 인공 신경망 학습 후, 예측 그래프이다.  
 ![Image](https://github.com/user-attachments/assets/7c95b6bf-801a-46ba-98bb-e2f05d8b04ab)
-$y = x (x > 0), ax (x \leq 0)$ 　 $(-3 \leq x \leq 3, 　a=0.1)$
+$y = x (x > 0)$,　$ax (x \leq 0)$ 　 $(-3 \leq x \leq 3, 　a=0.1)$
 
 x 좌표의 범위는 $-3$에서 $3$까지이다.  
 위 그래프에서 a는 0.1이다.  
