@@ -146,7 +146,45 @@ for epoch in range(20):
     b = b - lr*bb
     print(f' x  = {x:6.3f}, w  = {w:6.3f}, b  = {b:6.3f}')
 ```
+- epoch값을 0에서 20 미만까지 수행한다.
 
 다음은 실행 결과 화면이다.  
 ![Image](https://github.com/user-attachments/assets/0863c6ec-e0c4-4ce0-b249-9f329dcb6bcd)  
 y 값이 8.868까지 접근하는 것을 확인한다.
+<br>
+<br>
+
+### 반복 학습 200회 수행하기
+여기서는 반복 학습 200회를 수행해 보겠다.
+
+다음과 같이 예제를 수정한다.
+```python
+x = 2
+t = 10
+w = 3
+b = 1
+
+for epoch in range(200):
+
+    print(f'epoch = {epoch}')
+
+    y = x*w + 1*b
+    print(f' y  = {y:6.3f}')
+
+    yb = y - t
+    xb = yb*w
+    wb = yb*x
+    bb = yb*1
+    print(f' xb = {xb:6.3f}, wb = {wb:6.3f}, bb = {bb:6.3f}')
+
+    lr = 0.01
+    w = w - lr*wb
+    b = b - lr*bb
+    print(f' x  = {x:6.3f}, w  = {w:6.3f}, b  = {b:6.3f}')
+```
+- epoch값을 0에서 200 미만까지 수행한다.
+
+다음은 실행 결과 화면이다.  
+![Image](https://github.com/user-attachments/assets/2ed7b827-b279-4215-8dc4-8ca5278560cb)  
+y 값이 10.000에 수렴하는 것을 확인한다.  
+이 때, 가중치 w는 4.2, 편향 b는 1.6에 수렴한다.
