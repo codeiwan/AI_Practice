@@ -188,3 +188,52 @@ for epoch in range(200):
 ![Image](https://github.com/user-attachments/assets/2ed7b827-b279-4215-8dc4-8ca5278560cb)  
 y 값이 10.000에 수렴하는 것을 확인한다.  
 이 때, 가중치 w는 4.2, 편향 b는 1.6에 수렴한다.
+
+### 오차 값 계산하기
+여기서는 인공 신경망을 통해 얻어진 예측 값과 목표 값의 오차를 계산하는 부분을 추가해 보겠다.  
+오차(error)는 손실(loss) 또는 비용(cost)이라고도 한다.  
+오차 값이 작을수록 예측을 잘하는 인공 신경망이다.
+
+다음과 같이 예제를 수정한다.
+```python
+x = 2
+t = 10
+w = 3
+b = 1
+
+for epoch in range(200):
+
+    print(f'epoch = {epoch}')
+
+    y = x*w + 1*b
+    print(f' y  = {y:6.3f}')
+
+    E = (y-t)**2/2
+    print(f' E  = {E:.7f}')
+    if E < 0.0000001:
+        break
+
+    yb = y - t
+    xb = yb*w
+    wb = yb*x
+    bb = yb*1
+    print(f' xb = {xb:6.3f}, wb = {wb:6.3f}, bb = {bb:6.3f}')
+
+    lr = 0.01
+    w = w - lr*wb
+    b = b - lr*bb
+    print(f' x  = {x:6.3f}, w  = {w:6.3f}, b  = {b:6.3f}')
+```
+- 변수 E를 선언한 후, 다음과 같은 현태의 수식을 구현한다.  
+$E=\frac{1}{2}(y-t)^2$  
+y의 값이 t에 가까울수록 E의 값은 0에 가까워진다.  
+즉, 오차 값이 0에 가까워진다.  
+이 수식을 오차함수 또는 손실함수 또는 비용함수라고 한다.
+- print 함수를 호출하여 오차 값 E를 출력한다.  
+소수점 이하 7자리까지 출력한다.
+- 오차 값 E가 0.0000001(1천만분의1)보다 작으면 break문을 수행하여 6줄의 for문을 빠져 나간다.
+
+다음은 실행 결과 화면이다.  
+![Image](https://github.com/user-attachments/assets/733286b9-1014-4f66-94ec-9d800825364a)  
+epoch 값이 172(173회 째)일 때 for 문을 빠져 나간다.  
+y값은 10에 수렴한다.
