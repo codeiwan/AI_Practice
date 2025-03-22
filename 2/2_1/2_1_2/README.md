@@ -237,3 +237,53 @@ y의 값이 t에 가까울수록 E의 값은 0에 가까워진다.
 ![Image](https://github.com/user-attachments/assets/733286b9-1014-4f66-94ec-9d800825364a)  
 epoch 값이 172(173회 째)일 때 for 문을 빠져 나간다.  
 y값은 10에 수렴한다.
+<br>
+<br>
+
+### 학습률 변경하기
+여기서는 학습률 값을 변경시켜 보면서 학습의 상태를 살펴보겠다.
+
+다음과 같이 예제를 수정한다.
+```python
+x = 2
+t = 10
+w = 3
+b = 1
+
+for epoch in range(200):
+
+    print(f'epoch = {epoch}')
+
+    y = x*w + 1*b
+    print(f' y  = {y:6.3f}')
+
+    E = (y-t)**2/2
+    print(f' E  = {E:.7f}')
+    if E < 0.0000001:
+        break
+
+    yb = y - t
+    xb = yb*w
+    wb = yb*x
+    bb = yb*1
+    print(f' xb = {xb:6.3f}, wb = {wb:6.3f}, bb = {bb:6.3f}')
+
+    lr = 0.05
+    w = w - lr*wb
+    b = b - lr*bb
+    print(f' x  = {x:6.3f}, w  = {w:6.3f}, b  = {b:6.3f}')
+```
+- 학습률 값을 0.05로 변경한다.
+
+다음은 실행 결과 화면이다.
+```
+epoch = 30
+ y  =  9.999
+ E  = 0.0000001
+ xb = -0.002, wb = -0.001, bb = -0.001
+ x  =  2.000, w  =  4.200, b  =  1.600
+epoch = 31
+ y  = 10.000
+ E  = 0.0000001
+```
+32회 째 학습이 완료되는 것을 볼 수 있다.
