@@ -44,3 +44,45 @@ $b_2 = b_2 - ab_{2b}$
 가중치 w3, w4, 편향 b2는 각각 5, 6, 2이고  
 목표 값 t1, t2는 각각 27, -30이다.  
 x1, x2를 상수로 고정한 채 w1, w2, w3, w4, b1, b2에 대해 학습을 수행해 보자.
+
+다음과 같이 예제를 작성한다.
+```python
+x1, x2 = 2, 3
+t1, t2 = 27, -30
+w1, w3 = 3, 5
+w2, w4 = 4, 6
+b1, b2 = 1, 2
+
+for epoch in range(2000):
+
+    print(f'epoch = {epoch}')
+
+    y1 = x1*w1 + x2*w2 + 1*b1
+    y2 = x1*w3 + x2*w4 + 1*b2
+    print(f' y1,  y2  = {y1:6.3f}, {y2:6.3f}')
+
+    E = (y1-t1)**2/2 + (y2-t2)**2/2
+    print(f' E  = {E:.7f}')
+    if E < 0.0000001:
+        break
+
+    y1b, y2b = y1 - t1, y2 - t2
+    x1b, x2b = y1b*w1 + y2b*w3, y1b*w2 + y2b*w4
+    w1b, w3b = x1*y1b, x1*y2b
+    w2b, w4b = x2*y1b, x2*y2b
+    b1b, b2b = 1*y1b, 1*y2b
+    print(f' x1b, x2b = {x1b:6.3f}, {x2b:6.3f}')
+    print(f' w1b, w3b = {w1b:6.3f}, {w3b:6.3f}')
+    print(f' w2b, w4b = {w2b:6.3f}, {w4b:6.3f}')
+    print(f' b1b, b2b = {b1b:6.3f}, {b2b:6.3f}')
+
+    lr = 0.01
+    w1, w3 = w1 - lr*w1b, w3 - lr*w3b
+    w2, w4 = w2 - lr*w2b, w4 - lr*w4b
+    b1, b2 = b1 - lr*b1b, b2 - lr*b2b
+    print(f' w1,  w3  = {w1:6.3f}, {w3:6.3f}')
+    print(f' w2,  w4  = {w2:6.3f}, {w4:6.3f}')
+    print(f' b1,  b2  = {b1:6.3f}, {b2:6.3f}')
+```
+- x1b, x2b 변수를 선언한 후, 입력 값에 대한 역전파 값을 받아본다.  
+이 부분은 이 예제에서 필요한 부분은 아니며, 역전파 연습을 위해 추가하였다.
